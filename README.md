@@ -12,13 +12,11 @@ If you don't want to run this file follow these instructions:
 
 
 
-Set networking settings on the PC running the driver to be able to communicate with the LiDAR. 
+Set networking settings on the PC running the driver to be able to communicate with the LiDAR.   
  For example in our case we used:
   
-  IP: 169.254.152.1 (ending in .2 on remote pc and .4 on our LiDAR)
-  
-  Subnet: \16
-  
+  IP: 169.254.152.1 (ending in .2 on remote pc and .4 on our LiDAR)  
+  Subnet: \16  
   Gateway: 10.163.68.254
 
 The network settings can also be edited on the LMS151 by using the SOPAS tool: https://www.sick.com/se/sv/sopas-engineering-tool-2018/p/p367244
@@ -27,11 +25,9 @@ The network settings can also be edited on the LMS151 by using the SOPAS tool: h
 
 To start the talker node on the embeded pc first run the driver by running in terminal: 
  
- roslaunch lms1xx LMS1xx.launch 
- 
- rosrun lms1xx LMS1xx_node
-
-then run our package: rosrun embeded_pc talker.py
+ roslaunch lms1xx LMS1xx.launch  
+ rosrun lms1xx LMS1xx_node  
+ rosrun embeded_pc talker.py
 
 
 
@@ -39,8 +35,7 @@ On the remote PC you must set the enviorment variables $ROS_MASTER_URI and $ROS_
  
  In our case we configured these variables to: 
  
- $ROS_MASTER_URI='http://169.254.152.1:11311'
- 
+ $ROS_MASTER_URI='http://169.254.152.1:11311'  
  $ROS_IP=169.254.152.1
  
 For more info about these variables see the ROS documentation: http://wiki.ros.org/ROS/Tutorials/MultipleMachines
@@ -49,8 +44,10 @@ Don't forget to set the OS network settings to the same as on the embeded pc.
 
 
 
-The HMI with livefeed and playback can now be run with: rosrun remote_pc HMIOO.py
-T
-o update the database with incoming LiDAR data run: rosrun remote_pc listener.py
+The HMI with livefeed and playback can now be run with:  
+rosrun remote_pc HMIOO.py
+
+To update the database with incoming LiDAR data run:  
+rosrun remote_pc listener.py
 
 
