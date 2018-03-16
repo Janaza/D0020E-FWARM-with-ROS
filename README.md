@@ -34,7 +34,7 @@ To start the talker node on the embeded pc first run the driver by running in te
  
 --------
 
-###### Running the listener, database and the HMI
+###### Running the listener, database and the HMI (remote pc)
 The HMI with livefeed and playback can now be run with:  
 rosrun remote_pc HMIOO.py
 
