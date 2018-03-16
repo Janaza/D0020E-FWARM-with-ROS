@@ -22,6 +22,7 @@ Set networking settings on the PC running the driver to be able to communicate w
 
 The network settings can also be edited on the LMS151 by using the SOPAS tool: https://www.sick.com/se/sv/sopas-engineering-tool-2018/p/p367244
 
+--------
 
 ###### Running the talker node (embeded pc)
 To start the talker node on the embeded pc first run the driver by running in terminal: 
@@ -29,9 +30,17 @@ To start the talker node on the embeded pc first run the driver by running in te
  roslaunch lms1xx LMS1xx.launch  
  rosrun lms1xx LMS1xx_node  
  rosrun embeded_pc talker.py
-
+ 
+--------
 
 ###### Running the listener, database and the HMI
+The HMI with livefeed and playback can now be run with:  
+rosrun remote_pc HMIOO.py
+
+To update the database with incoming LiDAR data run:  
+rosrun remote_pc listener.py
+
+--------
 On the remote PC you must set the enviorment variables $ROS_MASTER_URI and $ROS_IP to point to the embeded pc.
  
  In our case we configured these variables to: 
@@ -41,13 +50,5 @@ On the remote PC you must set the enviorment variables $ROS_MASTER_URI and $ROS_
  
 For more info about these variables see the ROS documentation: http://wiki.ros.org/ROS/Tutorials/MultipleMachines
 
-
-
-
-The HMI with livefeed and playback can now be run with:  
-rosrun remote_pc HMIOO.py
-
-To update the database with incoming LiDAR data run:  
-rosrun remote_pc listener.py
 
 
