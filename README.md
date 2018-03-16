@@ -29,6 +29,7 @@ To start the talker node on the embeded pc first run the driver by running in te
  
  roslaunch lms1xx LMS1xx.launch  
  rosrun lms1xx LMS1xx_node  
+ We can now run the talker:  
  rosrun embeded_pc talker.py
  
 --------
