@@ -4,6 +4,10 @@ source /opt/ros/kinetic/setup.bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 git clone https://github.com/Janaza/D0020E-FWARM-with-ROS .
+sudo chmod +x ~/catkin_ws/src/remote_pc/scripts/HMIOO.py
+sudo chmod +x ~/catkin_ws/src/remote_pc/scripts/listener.py 
+sudo chmod +x ~/catkin_ws/src/remote_pc/scripts/getFromDB.py
+sudo chmod +x ~/catkin_ws/src/embeded_pc/scripts/talker.py 
 cd ~/catkin_ws/ 
 catkin_make
 sudo apt-get install ros-kinetic-lms1xx
