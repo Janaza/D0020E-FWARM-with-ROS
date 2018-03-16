@@ -16,10 +16,12 @@ If you don't want to run this file follow these instructions:
 Set networking settings on the PC running the driver to be able to communicate with the LiDAR.   
  For example in our case we used:
   
-  IP: 169.254.152.1 (ending in .2 on remote pc and .4 on our LiDAR)  
+  IP: 169.254.152.1 
   Subnet: \16  
   Gateway: 10.163.68.254
 
+These settings have to be configured on the remote PC aswell.
+  
 The network settings can also be edited on the LMS151 by using the SOPAS tool: https://www.sick.com/se/sv/sopas-engineering-tool-2018/p/p367244
 
 --------
