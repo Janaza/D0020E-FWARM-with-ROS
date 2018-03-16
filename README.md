@@ -8,10 +8,10 @@ If you don't want to run this file follow these instructions:
 2. Download our packages to the corresponding PC (the packages could also be ran on the same PC)
 3. Download the package containing the lms1xx driver http://wiki.ros.org/LMS1xx
 4. Build the packages (http://wiki.ros.org/ROS/Tutorials/BuildingPackages)
-
-
-
-
+  
+  
+  
+  
 Set networking settings on the PC running the driver to be able to communicate with the LiDAR.   
  For example in our case we used:
   
