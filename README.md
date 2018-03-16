@@ -23,7 +23,8 @@ $ROS_MASTER_URI='http://169.254.152.1:11311'
 
 $ROS_IP=169.254.152.1
 
-Don't forget to set the OS network settings to the same as on the embeded pc
+Don't forget to set the OS network settings to the same as on the embeded pc.
+
 The HMI with livefeed and playback can now be run with: rosrun remote_pc HMIOO.py
 To update the database with incoming LiDAR data run: rosrun remote_pc listener.py
 
