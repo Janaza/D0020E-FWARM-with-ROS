@@ -16,7 +16,7 @@ If you don't want to run this file follow these instructions:
 Set networking settings on the PC running the driver to be able to communicate with the LiDAR.   
  For example in our case we used:
   
-  IP: 169.254.152.1 
+  IP: 169.254.152.1  
   Subnet: \16  
   Gateway: 10.163.68.254
 
