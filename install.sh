@@ -13,6 +13,7 @@ sudo chmod +x ~/catkin_ws/src/remote_pc/scripts/getFromDB.py
 sudo chmod +x ~/catkin_ws/src/embeded_pc/scripts/talker.py 
 cd ~/catkin_ws/ 
 catkin_make
+source ~/catkin_ws/devel/setup.bash
 sudo apt-get install ros-kinetic-lms1xx
 
 
