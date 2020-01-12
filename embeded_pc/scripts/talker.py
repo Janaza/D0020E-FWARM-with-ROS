@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#Publish data from lidar (by ROS subscribe) to ROS publish
 import datetime
 import rospy
 from sensor_msgs.msg import LaserScan

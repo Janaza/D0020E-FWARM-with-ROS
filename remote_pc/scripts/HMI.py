@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#This is the HMI, 
+#This is the HMI, used to display data from lidar feed or a replay database
 from Tkinter import *
 import Tkinter as tk
 import math
@@ -29,7 +29,7 @@ closeDistance = 51.000
 closeDistance_initValue = 51.000
 closeAngleInt = 0
 
-conn_string = "host='localhost' dbname='testdb' user='willow' password='willow'"
+conn_string = "host='localhost' dbname='example_db' user='example_owner' password='example_owner'"
 conn = psycopg2.connect(conn_string)
 cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 lastTime = datetime(2018, 3, 8, 17, 55, 8, 1)
@@ -43,7 +43,7 @@ else:
 	replayVar=False
 
 def dbstuff():
-	conn_string = "host='localhost' dbname='testdb' user='willow' password='willow'"
+	conn_string = "host='localhost' dbname='example_db' user='example_owner' password='example_owner'"
 	print "Connecting to database\n	->%s" % (conn_string)
 	conn = psycopg2.connect(conn_string)
 	cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -119,20 +119,17 @@ def replay():
 
 
         #Select interval seconds of lidar data
-        sql = "SELECT timestamp FROM hej WHERE timestamp >= '"+str(lastTime)+"' AND timestamp < '"+str(lastTime + interval)+"'";
+        sql = "SELECT timestamp FROM lidar_data WHERE timestamp >= '"+str(lastTime)+"' AND timestamp < '"+str(lastTime + interval)+"'";
         cursor.execute(sql)
         timeArr = (cursor.fetchall())
 
-        sql = "SELECT lidar FROM hej WHERE timestamp >= '"+str(lastTime)+"' AND timestamp < '"+str(lastTime + interval)+"'";
+        sql = "SELECT lidar FROM lidar_data WHERE timestamp >= '"+str(lastTime)+"' AND timestamp < '"+str(lastTime + interval)+"'";
         cursor.execute(sql)
         lidarData = cursor.fetchall()
 
 
         i = 0
         while i < len(timeArr):
-            #
-            #print timeArr[i][0]
-            #
             newTime = datetime.strptime(str(timeArr[i][0]), timeConv)
 
             # Calculate wait time until next timestamp
@@ -173,7 +170,7 @@ def replay():
                 master.update()
             elif(waitTime == 0):
                 print("\nStream ended")
-                print("Database traversed from: 2018-03-08 17:55:08.396775" + "\nto:                      " + str(newTime))
+                print("Database traversed to:" + str(newTime))
                 print ("\nFound nearest object at: "+ str(closeDistance))
                 print ("Object moved from: " + str(lidarData[0][0][closeAngleInt]) + " meters to: "+ str(closeDistance)+" meters")
                 print("\n\nRunning live feed")

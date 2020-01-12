@@ -41,7 +41,7 @@ To start the talker node on the embeded pc first run the driver by running in te
 ###### Running the listener, database and the HMI (remote pc)
 Run the roscore (roscore in terminal)  
 The HMI with livefeed and playback can now be run with:  
-rosrun remote_pc HMIOO.py
+rosrun remote_pc HMI.py
 
 To update the database with incoming LiDAR data run:  
 rosrun remote_pc listener.py
